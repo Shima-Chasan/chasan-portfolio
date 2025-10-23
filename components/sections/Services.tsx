@@ -11,11 +11,10 @@ const services = [
       '名刺・ショップカード',
       'チラシ・パンフ',
       'lit.link制作代行',
-      '公式LINE構築',
-      'ECサイト制作'
+      'ECサイト・LP制作'
     ],
     href: '/services/design',
-    image: '/service-design.jpg'
+    image: '/images/PublicRelations Design.jpg'
   },
   {
     title: 'AI活用術レッスン',
@@ -26,7 +25,7 @@ const services = [
       'ワークショップ・セミナー'
     ],
     href: '/services/teaching',
-    image: '/service-teaching.jpg'
+    image: '/images/lesson.png'
   }
 ]
 

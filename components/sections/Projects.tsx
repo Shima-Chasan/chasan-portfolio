@@ -12,21 +12,21 @@ const projects = [
     tag: 'デザイン'
   },
   {
-    title: 'ChatGPT活用セミナー',
-    description: '中小企業向けAI活用術を3時間で習得',
-    image: '/project-2.jpg',
+    title: '2025年4月ChatGPT活用ワークショップ',
+    description: 'ChatGPTの使い方を1時間半で学ぶ',
+    image: '/images/202504workshop.png',
     tag: 'レッスン'
   },
   {
-    title: 'ECサイト制作・運用サポート',
-    description: 'BASE活用で売上3倍を実現',
-    image: '/project-3.jpg',
+    title: '寿司屋のHPを制作',
+    description: '名刺やメニュー表、のぼり制作も一貫してサポート',
+    image: '/images/sushigen-mockup.png',
     tag: 'デザイン'
   },
   {
-    title: 'Canvaテンプレート制作講座',
-    description: '効率的なデザイン制作術をオンラインで指導',
-    image: '/project-4.jpg',
+    title: '2025年6月ChatGPT活用ワークショップ',
+    description: 'ChatGPTの使い方を1時間半で学ぶ',
+    image: '/images/202506workshop.png',
     tag: 'レッスン'
   }
 ]
@@ -51,7 +51,7 @@ export default function Projects() {
                 src={project.image}
                 alt={project.title}
                 fill
-                className="object-cover rounded-lg"
+                className={`object-cover rounded-lg ${project.image.includes('sushigen') ? 'object-center' : 'object-top'}`}
               />
             </div>
             

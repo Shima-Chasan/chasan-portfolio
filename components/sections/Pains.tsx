@@ -3,7 +3,6 @@ import Card from '../Card'
 
 const pains = [
   'サービスの魅力をもっと分かりやすく伝えたい',
-  'SNSやLINEを始めたけど、活用方法が分からない',
   '事務作業に追われて本当にやりたいことに時間が割けない',
   'ITやAIは苦手だけど、業務を効率化したい'
 ]
@@ -31,12 +30,14 @@ export default function Pains() {
         
         <div className="lg:col-span-1 flex justify-center">
           <div className="w-64 h-64 rounded-full bg-white border border-[var(--brand)]/20 flex flex-col items-center justify-center text-center p-8 shadow-card">
-            <div className="text-lg font-bold text-[var(--text)] mb-3">
-              一緒に課題を言語化して、デザインと仕組みで解決。
-            </div>
-            <p className="text-[var(--brand)] text-sm leading-relaxed font-medium">
-              "伝わる"と"時短"を両立します。
+            <p className="text-[var(--brand)] text-sm leading-relaxed font-medium mb-3">
+              ＼"伝わる"と"時短"を両立／
             </p>
+            <div className="text-lg font-bold text-[var(--text)] leading-relaxed">
+              一緒に課題を<br />
+              デザインと仕組みで<br />
+              解決します！
+            </div>
           </div>
         </div>
       </div>

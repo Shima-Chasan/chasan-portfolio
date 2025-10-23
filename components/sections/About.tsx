@@ -7,7 +7,6 @@ const skills = [
   'ChatGPT/Gemini',
   'Canva',
   'AppSheet',
-  'LINE公式アカウント構築',
   'lit.link 制作代行',
   'Windsurf',
   'BASE/EC構築'
@@ -16,16 +15,19 @@ const skills = [
 
 export default function About() {
   return (
-    <Section id="about" padding="xl">
+    <Section id="about" band padding="xl">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold font-shippori text-[var(--text)] mb-4">
           About
         </h2>
+        <p className="text-[var(--muted)] max-w-2xl mx-auto">
+          プロフィールとスキルをご紹介します
+        </p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="text-center lg:text-left">
-          <div className="relative w-32 h-32 mx-auto lg:mx-0 mb-6">
+        <div className="text-center">
+          <div className="relative w-32 h-32 mx-auto mb-6">
             <Image
               src="/images/ちゃーさん AI アイコン（透過）.png"
               alt="ちゃーさんのプロフィール写真"

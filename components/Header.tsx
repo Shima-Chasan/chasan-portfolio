@@ -8,7 +8,6 @@ import Container from './Container'
 const navigation = [
   { name: 'Service', href: '/#service' },
   { name: 'Projects', href: '/#projects' },
-  { name: 'News', href: '/#news' },
   { name: 'About', href: '/#about' },
   { name: 'Contact', href: '/#contact' },
 ]

@@ -20,7 +20,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-base md:text-lg leading-7 text-[var(--muted)] mb-8">
-            名刺・ショップカード・EC・HP制作＆AI時短サポート
+            名刺・ショップカード・EC・LP制作＆AI時短サポート
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -36,7 +36,7 @@ export default function Hero() {
         {/* 右側：画像 */}
         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card">
           <Image
-            src="/hero.jpg"
+            src="/images/hero.png"
             alt="ちゃーさんのデザイン制作風景"
             fill
             className="object-cover"

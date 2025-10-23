@@ -30,7 +30,7 @@ const socialLinks = [
 
 export default function SocialBar() {
   return (
-    <div className="flex justify-center lg:justify-start gap-2">
+    <div className="flex justify-center gap-2">
       {socialLinks.map((link) => (
         <a
           key={link.name}

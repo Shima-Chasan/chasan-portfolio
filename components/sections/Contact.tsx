@@ -35,7 +35,7 @@ export default function Contact() {
   }
 
   return (
-    <Section id="contact" band padding="xl">
+    <Section id="contact" padding="xl">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold font-shippori text-[var(--text)] mb-4">
           Contact
