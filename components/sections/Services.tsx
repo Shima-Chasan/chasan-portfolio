@@ -6,7 +6,7 @@ import Button from '../Button'
 const services = [
   {
     title: '広報デザイン制作',
-    description: '見た目だけでなく"導線"まで設計',
+    description: '想いまで反映したデザインを設計',
     items: [
       '名刺・ショップカード',
       'チラシ・パンフ',
@@ -14,7 +14,7 @@ const services = [
       'ECサイト・LP制作'
     ],
     href: '/services/design',
-    image: '/images/PublicRelations Design.jpg'
+    image: '/images/Web Design Designer Girl.png'
   },
   {
     title: 'AI活用術レッスン',
@@ -25,7 +25,7 @@ const services = [
       'ワークショップ・セミナー'
     ],
     href: '/services/teaching',
-    image: '/images/lesson.png'
+    image: '/images/Conference Speaker.png'
   }
 ]
 
@@ -44,12 +44,12 @@ export default function Services() {
       <div className="grid md:grid-cols-2 gap-8 mb-8">
         {services.map((service, index) => (
           <Card key={index} className="overflow-hidden flex flex-col h-full">
-            <div className="relative aspect-[16/9] mb-6">
+            <div className="relative aspect-[16/9] mb-6 bg-gradient-to-br from-gray-50 to-gray-100">
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                className="object-cover rounded-lg"
+                className="object-contain rounded-lg p-4"
               />
             </div>
             

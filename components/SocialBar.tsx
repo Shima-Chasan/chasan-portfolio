@@ -3,7 +3,7 @@ import SocialIcon from './SocialIcon'
 const socialLinks = [
   { 
     name: 'youtube' as const, 
-    href: 'https://youtube.com/@koumnimama_ai',
+    href: 'https://www.youtube.com/@chasan_ai_it',
     label: 'YouTube'
   },
   { 
@@ -13,17 +13,17 @@ const socialLinks = [
   },
   { 
     name: 'note' as const, 
-    href: '#',
+    href: 'https://note.com/shima_chasan',
     label: 'note'
   },
   { 
     name: 'instagram' as const, 
-    href: '#',
+    href: 'https://www.instagram.com/shima_chasan',
     label: 'Instagram'
   },
   { 
     name: 'udemy' as const, 
-    href: '#',
+    href: 'https://www.udemy.com/user/dao-cun-qian-chun-2/',
     label: 'Udemy'
   }
 ]

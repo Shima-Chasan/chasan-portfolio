@@ -117,7 +117,7 @@ export default function TeachingServicePage() {
           
           <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-card">
             <Image
-              src="/service-teaching.jpg"
+              src="/images/Conference Speaker.png"
               alt="AI活用術レッスンのイメージ"
               fill
               className="object-cover"

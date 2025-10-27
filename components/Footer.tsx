@@ -21,21 +21,24 @@ export default function Footer() {
             AI×デザインで"時短"と"伝わる"をつくる
           </p>
           <div className="flex justify-center space-x-6 mb-8">
-            <a href="https://youtube.com/@placeholder" className="text-gray-300 hover:text-white transition-colors">
+            <a href="https://www.youtube.com/@chasan_ai_it" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-white transition-colors">
               YouTube
             </a>
-            <a href="https://twitter.com/placeholder" className="text-gray-300 hover:text-white transition-colors">
+            <a href="https://x.com/shima_chasan" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-white transition-colors">
               X (Twitter)
             </a>
-            <a href="https://note.com/placeholder" className="text-gray-300 hover:text-white transition-colors">
+            <a href="https://note.com/shima_chasan" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-white transition-colors">
               note
             </a>
-            <a href="https://instagram.com/placeholder" className="text-gray-300 hover:text-white transition-colors">
+            <a href="https://www.instagram.com/shima_chasan" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-white transition-colors">
               Instagram
+            </a>
+            <a href="https://www.udemy.com/user/dao-cun-qian-chun-2/" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-white transition-colors">
+              Udemy
             </a>
           </div>
           <div className="text-sm text-gray-400">
-            © 2024 ちゃーさん. All rights reserved.
+            © 2025 ちゃーさん. All rights reserved.
           </div>
         </div>
       </Container>
