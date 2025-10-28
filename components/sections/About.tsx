@@ -8,6 +8,7 @@ const skills = [
   'Canva',
   'AppSheet',
   'lit.link 制作代行',
+  'LP制作',
   'Windsurf',
   'BASE/EC構築'
 ]

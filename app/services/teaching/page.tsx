@@ -198,44 +198,8 @@ export default function TeachingServicePage() {
           </div>
         </Section>
 
-        {/* Pricing */}
-        <Section padding="xl">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold font-shippori text-[var(--text)] mb-4">
-              料金・開催形式
-            </h2>
-            <p className="text-[var(--muted)] max-w-2xl mx-auto">
-              規模や内容に応じて柔軟に対応いたします
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {pricing.map((plan, index) => (
-              <Card key={index} className="text-center">
-                <h3 className="text-lg font-bold font-shippori text-[var(--text)] mb-2">
-                  {plan.type}
-                </h3>
-                <div className="text-sm text-[var(--muted)] mb-4">
-                  {plan.duration}
-                </div>
-                <div className="text-2xl font-bold text-[var(--brand)] mb-6">
-                  {plan.price}
-                </div>
-                <ul className="space-y-2 text-sm text-left">
-                  {plan.includes.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-center space-x-2">
-                      <div className="w-1.5 h-1.5 bg-[var(--brand)] rounded-full flex-shrink-0"></div>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-        </Section>
-
         {/* FAQ */}
-        <Section band padding="xl">
+        <Section padding="xl">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold font-shippori text-[var(--text)] mb-4">
               よくあるご質問
@@ -257,7 +221,7 @@ export default function TeachingServicePage() {
         </Section>
 
         {/* Individual Consulting CTA */}
-        <Section padding="lg">
+        <Section band padding="lg">
           <Card className="text-center max-w-3xl mx-auto bg-gradient-to-br from-[var(--brand)]/5 to-[var(--brand)]/10">
             <h2 className="text-xl font-bold font-shippori text-[var(--text)] mb-4">
               個別コンサルのご案内
