@@ -3,7 +3,7 @@ import Container from './Container'
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--text)] text-white py-12">
+    <footer className="bg-[#4A413C] text-white py-12">
       <Container>
         <div className="text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">

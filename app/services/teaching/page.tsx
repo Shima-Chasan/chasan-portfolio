@@ -10,12 +10,14 @@ const formats = [
   {
     title: 'オンライン（YouTube）',
     description: '基礎から応用まで、いつでも学べる動画コンテンツ',
-    features: ['無料で視聴可能', '繰り返し学習', '最新情報を随時更新']
+    features: ['無料で視聴可能', '繰り返し学習', '最新情報を随時更新'],
+    link: 'https://www.youtube.com/@chasan_ai_it'
   },
   {
     title: 'オンライン（Udemy）',
     description: '体系的に学べる有料講座で深く理解',
-    features: ['実践的な内容', '質問サポート', '修了証明書']
+    features: ['実践的な内容', '質問サポート', '修了証明書'],
+    link: 'https://www.udemy.com/user/dao-cun-qian-chun-2/'
   },
   {
     title: 'ワークショップ',
@@ -115,12 +117,12 @@ export default function TeachingServicePage() {
             </p>
           </div>
           
-          <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-card">
+          <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-card bg-gradient-to-br from-gray-50 to-gray-100">
             <Image
               src="/images/Conference Speaker.png"
               alt="AI活用術レッスンのイメージ"
               fill
-              className="object-cover"
+              className="object-contain p-8"
             />
           </div>
         </Section>
@@ -129,7 +131,7 @@ export default function TeachingServicePage() {
         <Section padding="xl">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold font-shippori text-[var(--text)] mb-4">
-              提供形態
+              提供メニュー
             </h2>
             <p className="text-[var(--muted)] max-w-2xl mx-auto">
               お客様のニーズに合わせて、様々な形態でレッスンを提供します
@@ -145,7 +147,7 @@ export default function TeachingServicePage() {
                 <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
                   {format.description}
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-6">
                   {format.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-2 text-sm text-[var(--text)]">
                       <div className="w-1.5 h-1.5 bg-[var(--brand)] rounded-full flex-shrink-0"></div>
@@ -153,6 +155,11 @@ export default function TeachingServicePage() {
                     </li>
                   ))}
                 </ul>
+                {format.link && (
+                  <Button href={format.link} className="w-full" target="_blank">
+                    詳細を見る
+                  </Button>
+                )}
               </Card>
             ))}
           </div>

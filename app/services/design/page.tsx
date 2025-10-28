@@ -11,72 +11,100 @@ import Image from 'next/image'
 
 const services = [
   {
+    icon: (
+      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+      </svg>
+    ),
     title: '名刺・ショップカード',
-    description: 'お客様のビジネスに合わせた名刺をお作りします。',
-    price: '¥5,000〜'
+    price: '¥6,000〜'
   },
   {
+    icon: (
+      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
     title: 'チラシ・パンフレット',
-    description: '読み手の行動を促すレイアウトと訴求力のあるコピーで制作。',
-    price: '¥25,000〜'
+    price: '¥13,000〜'
   },
   {
+    icon: (
+      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+      </svg>
+    ),
     title: 'lit.link設計',
-    description: 'SNSからの導線を最適化。コンバージョンを意識した設計。',
-    price: '¥20,000〜'
+    price: '¥6,000〜'
   },
   {
+    icon: (
+      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    ),
     title: 'LINE公式アカウント',
-    description: '設計・リッチメニュー・自動応答まで一貫してサポート。',
-    price: '¥30,000〜'
+    price: '¥13,000〜'
   },
   {
-    title: 'Web制作（小規模）',
-    description: '更新しやすさを重視したサイト制作。運用まで考慮した設計。',
-    price: '¥80,000〜'
+    icon: (
+      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+      </svg>
+    ),
+    title: 'EC・LP制作',
+    price: '¥38,000〜'
   }
 ]
 
 const process = [
-  { step: '01', title: 'ヒアリング', description: 'ターゲット・目的・課題を詳しくお聞きします' },
-  { step: '02', title: '骨子（導線）', description: '誰に・何を・どこで・どう動いてほしいかを設計' },
-  { step: '03', title: 'ワイヤーフレーム', description: '情報の配置と流れを可視化' },
-  { step: '04', title: 'デザイン', description: 'ブランドイメージに合わせたビジュアル制作' },
-  { step: '05', title: '入稿/公開', description: '印刷・Web公開まで責任を持ってサポート' },
-  { step: '06', title: '運用メモ', description: '継続的な運用のためのガイドを提供' }
+  { step: '01', title: 'ヒアリング', description: 'ご要望や目的をお伺いします' },
+  { step: '02', title: 'お見積もり', description: '内容に応じた料金をご提示' },
+  { step: '03', title: '原稿・画像ご提供', description: '必要な素材をご準備いただきます' },
+  { step: '04', title: '初稿提出', description: 'デザイン案をご確認いただきます' },
+  { step: '05', title: '修正', description: 'ご要望に応じて調整します' },
+  { step: '06', title: '納品', description: '完成データをお渡しします' }
 ]
 
 const comparisonData = [
   {
     menu: '名刺・ショップカード',
     target: '初めて名刺を作る方、リニューアルしたい方',
-    includes: 'デザイン制作、印刷データ納品、修正2回まで',
+    includes: 'デザイン制作、印刷データ納品、修正5回まで',
     delivery: '1週間〜',
-    price: '¥5,000〜',
+    price: '¥6,000〜',
     note: '印刷は別途ご相談'
   },
   {
     menu: 'チラシ・パンフレット',
     target: 'イベント告知、商品紹介をしたい方',
-    includes: 'デザイン制作、印刷データ納品、修正2回まで',
+    includes: 'デザイン制作、印刷データ納品、修正5回まで',
     delivery: '2週間〜',
-    price: '¥25,000〜',
-    note: 'ページ数により変動'
+    price: '¥13,000〜',
+    note: ''
   },
   {
     menu: 'lit.link制作代行',
     target: 'SNSからの導線を整理したい方',
     includes: '設計、デザイン、公開設定、運用マニュアル',
     delivery: '1週間〜',
-    price: '¥20,000〜',
-    note: '更新方法もレクチャー'
+    price: '¥6,000〜',
+    note: ''
+  },
+  {
+    menu: 'LINE公式アカウント',
+    target: '顧客とのコミュニケーションを強化したい方',
+    includes: '設計、リッチメニュー、自動応答設定',
+    delivery: '2週間〜',
+    price: '¥13,000〜',
+    note: '機能により変動'
   },
   {
     menu: 'ECサイト・LP制作',
     target: '商品販売やサービス紹介をしたい方',
     includes: 'デザイン制作、コーディング、レスポンシブ対応',
     delivery: '3週間〜',
-    price: '¥80,000〜',
+    price: '¥38,000〜',
     note: '規模により変動'
   }
 ]
@@ -144,14 +172,14 @@ export default function DesignServicePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {services.map((service, index) => (
-              <Card key={index}>
+              <Card key={index} className="text-center">
+                <div className="text-[var(--brand)] mb-4 flex justify-center">
+                  {service.icon}
+                </div>
                 <h3 className="text-lg font-bold font-shippori text-[var(--text)] mb-3">
                   {service.title}
                 </h3>
-                <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="text-[var(--brand)] font-bold">
+                <div className="text-[var(--brand)] font-bold text-xl">
                   {service.price}
                 </div>
               </Card>
@@ -165,7 +193,7 @@ export default function DesignServicePage() {
               className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-white border border-[var(--line)] rounded-lg hover:bg-gray-50 transition-colors"
               aria-expanded={isComparisonOpen}
             >
-              <span className="font-medium text-[var(--text)]">比較表を見る</span>
+              <span className="font-medium text-[var(--text)]">詳細を見る</span>
               <svg
                 className={`w-5 h-5 transition-transform ${isComparisonOpen ? 'rotate-180' : ''}`}
                 fill="none"
@@ -258,20 +286,73 @@ export default function DesignServicePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {process.map((item, index) => (
-              <Card key={index} className="text-center">
-                <div className="w-12 h-12 bg-[var(--brand)] text-white rounded-full flex items-center justify-center font-bold mb-4 mx-auto">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-bold font-shippori text-[var(--text)] mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-[var(--muted)] text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </Card>
-            ))}
+          <div className="max-w-6xl mx-auto">
+            {/* デスクトップ版：横スクロールタイムライン */}
+            <div className="hidden md:block overflow-x-auto pb-8">
+              <div className="flex items-start gap-4 min-w-max px-4">
+                {process.map((item, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 bg-[var(--brand)] text-white rounded-full flex items-center justify-center font-bold text-lg mb-3 shadow-md">
+                        {item.step}
+                      </div>
+                      <div className="w-48 text-center">
+                        <h3 className="text-base font-bold font-shippori text-[var(--text)] mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-[var(--muted)] text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                    {index < process.length - 1 && (
+                      <div className="flex items-center pt-8 px-4">
+                        <svg className="w-8 h-8 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* モバイル版：2列グリッド */}
+            <div className="md:hidden">
+              <div className="grid grid-cols-2 gap-4">
+                {process.map((item, index) => (
+                  <div key={index} className="relative">
+                    <Card className="text-center h-full">
+                      <div className="w-10 h-10 bg-[var(--brand)] text-white rounded-full flex items-center justify-center font-bold text-sm mb-3 mx-auto">
+                        {item.step}
+                      </div>
+                      <h3 className="text-sm font-bold font-shippori text-[var(--text)] mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-[var(--muted)] text-xs leading-relaxed">
+                        {item.description}
+                      </p>
+                    </Card>
+                    {/* 右向き矢印（奇数番目で最後でない場合） */}
+                    {index % 2 === 0 && index < process.length - 1 && (
+                      <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 z-10">
+                        <svg className="w-4 h-4 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    )}
+                    {/* 下向き矢印（偶数番目で最後でない場合） */}
+                    {index % 2 === 1 && index < process.length - 1 && (
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 z-10">
+                        <svg className="w-4 h-4 text-[var(--brand)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Section>
 

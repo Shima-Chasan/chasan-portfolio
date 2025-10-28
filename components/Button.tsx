@@ -7,6 +7,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
   variant?: 'primary' | 'secondary'
   className?: string
+  target?: string
 }
 
 export default function Button({ 
@@ -15,7 +16,8 @@ export default function Button({
   onClick, 
   type = 'button', 
   variant = 'primary',
-  className = ''
+  className = '',
+  target
 }: ButtonProps) {
   const baseClasses = 'btn'
   const variantClasses = variant === 'secondary' 
@@ -26,7 +28,7 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined}>
         {children}
       </Link>
     )
