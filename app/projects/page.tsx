@@ -78,14 +78,14 @@ const projects = [
     year: '2023'
   },
   {
-    title: 'YouTube活用セミナー',
-    description: '個人事業主向けにYouTubeを活用した集客方法を指導。参加者の平均チャンネル登録者数が3ヶ月で5倍に増加。',
+    title: 'セミナー登壇（ChatGPT活用法）',
+    description: '所属しているオンラインコミュニティの「今日から始める稼ぐスキルの育て方セミナー」にて登壇しました。',
     challenge: 'YouTubeを始めたいが何から手をつけて良いか分からない',
     solution: '企画から撮影、編集、運用まで体系的にサポート',
-    image: '/project-8.jpg',
+    image: '/images/20250125_seminar.JPG',
     tag: 'レッスン',
-    category: 'SNS活用',
-    year: '2023'
+    category: 'AI活用術',
+    year: '2025.01'
   }
 ]
 
@@ -145,21 +145,9 @@ export default function ProjectsPage() {
                   {project.title}
                 </h3>
                 
-                <p className="text-[var(--muted)] text-sm mb-4 line-clamp-3">
+                <p className="text-[var(--muted)] text-sm line-clamp-3">
                   {project.description}
                 </p>
-                
-                <div className="space-y-3">
-                  <div>
-                    <div className="text-xs font-bold text-[var(--text)] mb-1">課題</div>
-                    <div className="text-xs text-[var(--muted)]">{project.challenge}</div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-xs font-bold text-[var(--text)] mb-1">解決策</div>
-                    <div className="text-xs text-[var(--muted)]">{project.solution}</div>
-                  </div>
-                </div>
               </Card>
             ))}
           </div>

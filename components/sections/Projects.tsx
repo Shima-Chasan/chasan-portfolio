@@ -18,7 +18,13 @@ const projects = [
     tag: 'レッスン'
   },
   {
-    title: '寿司屋のHPを制作',
+    title: 'セミナー登壇（ChatGPT活用法）',
+    description: '所属しているオンラインコミュニティの「今日から始める稼ぐスキルの育て方セミナー」にて登壇しました。',
+    image: '/images/20250125_seminar.JPG',
+    tag: 'レッスン'
+  },
+  {
+    title: '寿司店のHPを制作',
     description: '名刺やメニュー表、のぼり制作も一貫してサポート',
     image: '/images/sushigen-mockup.png',
     tag: 'デザイン'

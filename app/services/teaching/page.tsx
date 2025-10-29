@@ -20,14 +20,9 @@ const formats = [
     link: 'https://www.udemy.com/user/dao-cun-qian-chun-2/'
   },
   {
-    title: 'ワークショップ',
-    description: '少人数制で実際に手を動かしながら学習',
-    features: ['5-10名の少人数制', '実践重視', '個別フォロー']
-  },
-  {
-    title: 'セミナー',
-    description: '企業・団体向けの大規模研修',
-    features: ['10-50名対応', 'カスタマイズ可能', '資料提供']
+    title: 'ワークショップ・セミナー',
+    description: '少人数から大規模まで、対面で実践的に学習',
+    features: ['5-20名対応', '実践重視', 'カスタマイズ可能', '個別フォロー']
   }
 ]
 
@@ -41,19 +36,13 @@ const themes = [
   {
     title: 'ChatGPT実践活用',
     description: '議事録・文面・要約など業務での活用法',
-    duration: '120分',
+    duration: '90分',
     target: 'ビジネスパーソン全般'
   },
   {
-    title: '小規模事業の広報ミニ講座',
-    description: 'lit.link・LINE・Webのつなげ方',
+    title: 'Geminiなどその他のAIツール',
+    description: 'ChatGPT以外のAIツールの特徴と活用法',
     duration: '90分',
-    target: '個人事業主・小規模事業者'
-  },
-  {
-    title: 'AI×ノーコード活用術',
-    description: 'AppSheetやその他ツールとの連携',
-    duration: '120分',
     target: 'IT活用を進めたい事業者'
   }
 ]
@@ -81,16 +70,12 @@ const pricing = [
 
 const faqs = [
   {
-    question: '機材の準備は必要ですか？',
-    answer: 'オンライン開催の場合、PC・インターネット環境をご用意ください。対面の場合は会場・プロジェクター等をご準備いただければ、その他機材は持参いたします。'
+    question: 'セミナー等で必要な準備がありますか？',
+    answer: 'オンライン開催の場合、PC・インターネット環境をご用意ください。対面の場合は、できるだけPCやタブレットをご持参することをおすすめします。'
   },
   {
     question: '配布資料はありますか？',
-    answer: 'すべての講座で実践的な資料をご提供します。PDF形式での配布となり、講座後も復習にご活用いただけます。'
-  },
-  {
-    question: '録画は可能ですか？',
-    answer: '企業研修・セミナーの場合は録画可能です（事前にご相談ください）。ワークショップは参加者の学習効果を重視するため、録画はお断りしております。'
+    answer: 'すべての講座で実践的な資料をご提供します。スライドや参考資料をまとめたWebページを共有いたしますので、講座後もいつでも復習にご活用いただけます。'
   },
   {
     question: 'フォローアップはありますか？',
@@ -112,8 +97,8 @@ export default function TeachingServicePage() {
             </h1>
             <p className="text-lg text-[var(--muted)] max-w-3xl mx-auto leading-relaxed">
               オンライン（YouTube/Udemy）も対面（ワークショップ/セミナー）も対応。<br />
-              "むずかしいIT"を"やさしく"お伝えし、<br />
-              すぐに実践できるスキルを身につけていただきます。
+              むずかしいAIの知識を、もっと身近なツールへ。<br />
+              あなたの仕事や作業がもっと楽になる、実践的なスキルをお伝えします。
             </p>
           </div>
           
@@ -138,16 +123,16 @@ export default function TeachingServicePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {formats.map((format, index) => (
-              <Card key={index}>
+              <Card key={index} className="flex flex-col h-full">
                 <h3 className="text-lg font-bold font-shippori text-[var(--text)] mb-3">
                   {format.title}
                 </h3>
-                <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">
+                <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed h-10">
                   {format.description}
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   {format.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-2 text-sm text-[var(--text)]">
                       <div className="w-1.5 h-1.5 bg-[var(--brand)] rounded-full flex-shrink-0"></div>
@@ -156,7 +141,7 @@ export default function TeachingServicePage() {
                   ))}
                 </ul>
                 {format.link && (
-                  <Button href={format.link} className="w-full" target="_blank">
+                  <Button href={format.link} className="w-full mt-auto" target="_blank">
                     詳細を見る
                   </Button>
                 )}
@@ -176,7 +161,7 @@ export default function TeachingServicePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {themes.map((theme, index) => (
               <Card key={index}>
                 <h3 className="text-lg font-bold font-shippori text-[var(--text)] mb-2">

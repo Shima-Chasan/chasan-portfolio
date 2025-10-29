@@ -34,7 +34,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
       </svg>
     ),
-    title: 'lit.link設計',
+    title: 'lit.link制作',
     price: '¥6,000〜'
   },
   {
@@ -111,16 +111,12 @@ const comparisonData = [
 
 const faqs = [
   {
-    question: 'データはどのような形式で納品されますか？',
-    answer: 'AI・PSD・PDF・JPEGなど、用途に応じて最適な形式で納品いたします。印刷用データも含まれます。'
-  },
-  {
     question: '修正は何回まで可能ですか？',
-    answer: '初回提案後、2回まで無料で修正対応いたします。それ以降は別途料金が発生します。'
+    answer: '初回提案後、5回まで無料で修正対応いたします。それ以降は別途料金が発生します。'
   },
   {
     question: '素材（写真・ロゴ等）は提供していただけますか？',
-    answer: 'お客様でご用意いただくのが基本ですが、必要に応じて素材選定・撮影のサポートも行います。'
+    answer: 'お客様でご用意いただくのが基本ですが、必要に応じて素材提供・撮影のサポートも行います。'
   },
   {
     question: '納期はどのくらいですか？',
@@ -143,9 +139,9 @@ export default function DesignServicePage() {
               広報デザイン制作
             </h1>
             <p className="text-lg text-[var(--muted)] max-w-3xl mx-auto leading-relaxed">
-              デザインは"見た目"だけでなく<strong>導線設計</strong>が重要です。<br />
-              誰に・何を・どこで・どう動いてほしいかを明確にして、<br />
-              成果につながるデザインを制作します。
+              まずは、お客様のお話をじっくりお聞かせください。<br />
+              丁寧なヒアリングに基づき、お客様の目的や想いを形にする<br />
+              最適なデザインをご提案し、制作いたします。
             </p>
           </div>
           
