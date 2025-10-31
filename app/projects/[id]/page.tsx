@@ -1,11 +1,12 @@
+'use client'
+
+import { useParams } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
-import Card from '@/components/Card'
 import Badge from '@/components/Badge'
 import Button from '@/components/Button'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const projects = [
   {
@@ -120,69 +121,68 @@ const projects = [
   }
 ]
 
-const categories = ['すべて', 'ブランディング', 'ECサイト', 'Webサイト', 'LINE活用', 'AI活用術', 'デザインツール', 'ノーコード', 'SNS活用']
+export default function ProjectDetailPage() {
+  const params = useParams()
+  const project = projects.find(p => p.id === params.id)
 
-export default function ProjectsPage() {
+  if (!project) {
+    return (
+      <>
+        <Header />
+        <main>
+          <Section padding="xl">
+            <div className="text-center">
+              <h1 className="text-2xl font-bold font-shippori text-[var(--text)] mb-4">
+                プロジェクトが見つかりません
+              </h1>
+              <Button href="/projects">プロジェクト一覧に戻る</Button>
+            </div>
+          </Section>
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <>
       <Header />
       <main>
         {/* Hero Section */}
-        <Section padding="xl" className="bg-gradient-to-b from-white to-[var(--section)]">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-5xl font-bold font-shippori text-[var(--text)] mb-6">
-              Projects
-            </h1>
-            <p className="text-lg text-[var(--muted)] max-w-3xl mx-auto leading-relaxed">
-              これまでの制作実績・レッスン実績をご紹介します。<br />
-              お客様の課題解決から成果まで、具体的な事例をご覧ください。
-            </p>
-          </div>
-        </Section>
-
-        {/* Filter Tabs */}
-        <Section padding="md">
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {categories.map((category, index) => (
-              <Badge key={index} className="cursor-pointer hover:bg-[var(--brand)]/10 transition-colors">
-                {category}
+        <Section padding="xl" className="bg-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-6">
+              <Button href="/projects" variant="secondary">← プロジェクト一覧に戻る</Button>
+            </div>
+            
+            <div className="flex items-center gap-3 mb-4">
+              <Badge variant={project.tag === 'デザイン' ? 'design' : 'lesson'}>
+                #{project.tag}
               </Badge>
-            ))}
-          </div>
-        </Section>
+              <span className="text-sm text-[var(--muted)]">{project.year}</span>
+            </div>
 
-        {/* Projects Grid */}
-        <Section padding="lg">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Link key={index} href={`/projects/${project.id}`} className="block hover:opacity-80 transition-opacity">
-                <Card className="overflow-hidden h-full">
-                  <div className="relative aspect-[16/9] mb-4">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className={`rounded-lg ${project.image.includes('workshop') ? 'object-cover object-top' : 'object-cover'}`}
-                    />
-                  </div>
-                  
-                  <div className="flex items-center justify-between mb-3">
-                    <Badge variant={project.tag === 'デザイン' ? 'design' : 'lesson'}>
-                      #{project.tag}
-                    </Badge>
-                    <span className="text-xs text-[var(--muted)]">{project.year}</span>
-                  </div>
-                  
-                  <h3 className="text-lg font-bold font-shippori text-[var(--text)] mb-2 line-clamp-2">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-[var(--muted)] text-sm line-clamp-3">
-                    {project.description}
-                  </p>
-                </Card>
-              </Link>
-            ))}
+            <h1 className="text-3xl md:text-4xl font-bold font-shippori text-[var(--text)] mb-6">
+              {project.title}
+            </h1>
+
+            <div className={`relative aspect-[16/9] mb-8 rounded-lg overflow-hidden ${project.image.includes('workshop') ? 'bg-white border border-gray-200' : ''}`}>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className={`${project.image.includes('workshop') ? 'object-contain p-8' : 'object-cover'}`}
+              />
+            </div>
+
+            <div className="prose max-w-none">
+              <h2 className="text-2xl font-bold font-shippori text-[var(--text)] mb-4">
+                プロジェクト概要
+              </h2>
+              <p className="text-[var(--text)] leading-relaxed">
+                {project.description}
+              </p>
+            </div>
           </div>
         </Section>
 
@@ -190,15 +190,12 @@ export default function ProjectsPage() {
         <Section band padding="lg">
           <div className="text-center">
             <h2 className="text-2xl font-bold font-shippori text-[var(--text)] mb-4">
-              あなたのプロジェクトも始めませんか？
-            </h2>
-            <p className="text-[var(--muted)] mb-8 max-w-2xl mx-auto">
-              お客様の課題に合わせて最適なソリューションをご提案します。<br />
-              まずはお気軽にご相談ください。
-            </p>
-            <Button href="/#contact">
               お問い合わせ
-            </Button>
+            </h2>
+            <p className="text-[var(--muted)] mb-6">
+              同様のプロジェクトをご希望の方は、お気軽にご相談ください
+            </p>
+            <Button href="/#contact">お問い合わせはこちら</Button>
           </div>
         </Section>
       </main>

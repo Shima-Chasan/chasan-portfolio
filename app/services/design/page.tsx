@@ -17,7 +17,7 @@ const services = [
       </svg>
     ),
     title: '名刺・ショップカード',
-    price: '¥6,000〜'
+    price: '¥5,000〜'
   },
   {
     icon: (
@@ -72,7 +72,7 @@ const comparisonData = [
     target: '初めて名刺を作る方、リニューアルしたい方',
     includes: 'デザイン制作、印刷データ納品、修正5回まで',
     delivery: '1週間〜',
-    price: '¥6,000〜',
+    price: '¥5,000〜',
     note: '印刷は別途ご相談'
   },
   {
@@ -86,7 +86,7 @@ const comparisonData = [
   {
     menu: 'lit.link制作代行',
     target: 'SNSからの導線を整理したい方',
-    includes: '設計、デザイン、公開設定、運用マニュアル',
+    includes: '設計、デザイン、公開設定',
     delivery: '1週間〜',
     price: '¥6,000〜',
     note: ''
@@ -145,7 +145,7 @@ export default function DesignServicePage() {
             </p>
           </div>
           
-          <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-card bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-card bg-white">
             <Image
               src="/images/Web Design Designer Girl.png"
               alt="デザイン制作のイメージ"

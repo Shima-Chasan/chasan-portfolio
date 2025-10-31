@@ -44,7 +44,7 @@ export default function Services() {
       <div className="grid md:grid-cols-2 gap-8 mb-8">
         {services.map((service, index) => (
           <Card key={index} className="overflow-hidden flex flex-col h-full">
-            <div className="relative aspect-[16/9] mb-6 bg-gradient-to-br from-gray-50 to-gray-100">
+            <div className="relative aspect-[16/9] mb-6 bg-white">
               <Image
                 src={service.image}
                 alt={service.title}

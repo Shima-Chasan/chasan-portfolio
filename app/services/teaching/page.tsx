@@ -102,7 +102,7 @@ export default function TeachingServicePage() {
             </p>
           </div>
           
-          <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-card bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="relative aspect-[16/9] max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-card bg-white">
             <Image
               src="/images/Conference Speaker.png"
               alt="AI活用術レッスンのイメージ"
