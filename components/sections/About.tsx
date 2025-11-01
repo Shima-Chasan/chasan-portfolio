@@ -48,7 +48,7 @@ export default function About() {
 
         <div>
           <p className="text-base md:text-lg leading-7 text-[var(--text)] mb-8">
-            <strong>"むずかしいITをやさしく"</strong>。AIとノーコードで業務をラクに、
+            <strong>「むずかしいITをやさしく」</strong>。AIとノーコードで業務をラクに、
             デザインで想いを伝わりやすく。鹿児島を拠点に、全国のスモールビジネスを
             サポートしています。
           </p>

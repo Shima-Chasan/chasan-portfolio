@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="text-2xl font-bold font-zen">ちゃーさん</div>
           </div>
           <p className="text-gray-300 mb-6">
-            AI×デザインで"時短"と"伝わる"をつくる
+            AI×デザインで「時短」と「伝わる」をつくる
           </p>
           <div className="flex justify-center space-x-6 mb-8">
             <a href="https://www.youtube.com/@chasan_ai_it" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-white transition-colors">
