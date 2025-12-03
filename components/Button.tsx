@@ -8,6 +8,7 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary'
   className?: string
   target?: string
+  disabled?: boolean
 }
 
 export default function Button({ 
@@ -17,14 +18,16 @@ export default function Button({
   type = 'button', 
   variant = 'primary',
   className = '',
-  target
+  target,
+  disabled = false
 }: ButtonProps) {
   const baseClasses = 'btn'
   const variantClasses = variant === 'secondary' 
     ? 'bg-white text-[var(--text)] border border-[var(--line)] hover:bg-gray-50' 
     : ''
+  const disabledClasses = disabled ? 'opacity-50 cursor-not-allowed' : ''
   
-  const classes = `${baseClasses} ${variantClasses} ${className}`
+  const classes = `${baseClasses} ${variantClasses} ${disabledClasses} ${className}`
 
   if (href) {
     return (
@@ -35,7 +38,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} className={classes} disabled={disabled}>
       {children}
     </button>
   )

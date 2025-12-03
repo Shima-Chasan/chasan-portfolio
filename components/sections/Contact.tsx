@@ -1,8 +1,42 @@
+'use client'
+
+import { useState } from 'react'
 import Section from '../Section'
 import Card from '../Card'
 import Button from '../Button'
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const formData = new FormData(e.currentTarget)
+      const response = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData as any).toString(),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        e.currentTarget.reset()
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <Section id="contact" padding="xl">
@@ -27,9 +61,8 @@ export default function Contact() {
         <Card>
           <form 
             name="contact" 
-            method="POST" 
-            data-netlify="true" 
-            netlify-honeypot="bot-field"
+            method="POST"
+            onSubmit={handleSubmit}
             className="space-y-6"
           >
             {/* Netlify Forms用のhidden input */}
@@ -41,6 +74,18 @@ export default function Contact() {
                 Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
               </label>
             </p>
+
+            {submitStatus === 'success' && (
+              <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                お問い合わせありがとうございます。後日ご連絡いたします。
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+                送信に失敗しました。もう一度お試しください。
+              </div>
+            )}
 
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-[var(--text)] mb-2">
@@ -102,8 +147,8 @@ export default function Contact() {
               />
             </div>
 
-            <Button type="submit" className="w-full">
-              送信する
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? '送信中...' : '送信する'}
             </Button>
           </form>
         </Card>
