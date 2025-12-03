@@ -28,7 +28,7 @@ const projects = [
   {
     id: '3',
     title: '寿司店のHP制作',
-    description: '寿司店のHPを制作しました。\n\n日本語表記と英語表記の切り替えもできます。\n\n寿司店HPリンク↓\nhttps://sushigen-nakasu.netlify.app/',
+    description: '寿司店のHPを制作しました。\n日本語表記と英語表記の切り替えもできます。\n寿司店HPリンク↓\nhttps://sushigen-nakasu.netlify.app/',
     image: '/images/202508_sushigen-hp.png',
     tag: 'デザイン',
     year: '2025.08'
@@ -149,9 +149,36 @@ export default function ProjectDetailPage() {
               <h2 className="text-2xl font-bold font-shippori text-[var(--text)] mb-4">
                 プロジェクト概要
               </h2>
-              <p className="text-[var(--text)] leading-relaxed">
-                {project.description}
-              </p>
+              <div className="text-[var(--text)] leading-relaxed">
+                {project.description.split('\n').map((line, index) => {
+                  // URLを検出してリンクに変換
+                  const urlRegex = /(https?:\/\/[^\s]+)/g;
+                  if (urlRegex.test(line)) {
+                    const parts = line.split(urlRegex);
+                    return (
+                      <p key={index} className="mb-2">
+                        {parts.map((part, i) => {
+                          if (part.match(urlRegex)) {
+                            return (
+                              <a
+                                key={i}
+                                href={part}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[var(--brand)] hover:underline"
+                              >
+                                {part}
+                              </a>
+                            );
+                          }
+                          return part;
+                        })}
+                      </p>
+                    );
+                  }
+                  return line ? <p key={index} className="mb-2">{line}</p> : <br key={index} />;
+                })}
+              </div>
             </div>
           </div>
         </Section>

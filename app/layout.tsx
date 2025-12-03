@@ -5,6 +5,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'ちゃーさん｜AI×デザインで"時短"と"伝わる"をつくる',
   description: '名刺・ショップカード・EC・HP制作、AIで運用までラクに。鹿児島中心に全国オンライン対応。',
+  verification: {
+    google: '3mSpSLeoyiX3BRcVXRz4g_niB9YXodYbAg5B9rtlG4E',
+  },
   openGraph: {
     title: 'ちゃーさん｜AI×デザインで"時短"と"伝わる"をつくる',
     description: '名刺・ショップカード・EC・HP制作、AIで運用までラクに。鹿児島中心に全国オンライン対応。',
