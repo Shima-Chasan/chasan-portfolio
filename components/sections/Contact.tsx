@@ -1,38 +1,8 @@
-'use client'
-
-import { useState } from 'react'
 import Section from '../Section'
 import Card from '../Card'
 import Button from '../Button'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    purpose: '制作（デザイン）',
-    message: ''
-  })
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    // TODO: set your Formspree endpoint
-    // const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(formData),
-    // })
-    console.log('Form submitted:', formData)
-    alert('お問い合わせありがとうございます。後日ご連絡いたします。')
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
 
   return (
     <Section id="contact" padding="xl">
@@ -55,7 +25,23 @@ export default function Contact() {
 
       <div className="max-w-2xl mx-auto">
         <Card>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true" 
+            netlify-honeypot="bot-field"
+            className="space-y-6"
+          >
+            {/* Netlify Forms用のhidden input */}
+            <input type="hidden" name="form-name" value="contact" />
+            
+            {/* Honeypot field for spam protection */}
+            <p className="hidden">
+              <label>
+                Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+              </label>
+            </p>
+
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-[var(--text)] mb-2">
                 お名前 <span className="text-red-500">*</span>
@@ -65,8 +51,6 @@ export default function Contact() {
                 id="name"
                 name="name"
                 required
-                value={formData.name}
-                onChange={handleChange}
                 className="w-full px-4 py-3 border border-[var(--line)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--brand)] focus:border-transparent"
               />
             </div>
@@ -80,8 +64,6 @@ export default function Contact() {
                 id="email"
                 name="email"
                 required
-                value={formData.email}
-                onChange={handleChange}
                 className="w-full px-4 py-3 border border-[var(--line)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--brand)] focus:border-transparent"
               />
             </div>
@@ -97,8 +79,7 @@ export default function Contact() {
                       type="radio"
                       name="purpose"
                       value={option}
-                      checked={formData.purpose === option}
-                      onChange={handleChange}
+                      defaultChecked={option === '制作（デザイン）'}
                       className="mr-2 text-[var(--brand)] focus:ring-[var(--brand)]"
                     />
                     <span className="text-[var(--text)]">{option}</span>
@@ -116,8 +97,6 @@ export default function Contact() {
                 name="message"
                 rows={6}
                 required
-                value={formData.message}
-                onChange={handleChange}
                 className="w-full px-4 py-3 border border-[var(--line)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--brand)] focus:border-transparent resize-none"
                 placeholder="お気軽にご相談内容をお聞かせください"
               />
