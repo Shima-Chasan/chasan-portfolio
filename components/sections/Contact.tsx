@@ -24,10 +24,13 @@ export default function Contact() {
         body: new URLSearchParams(formData as any).toString(),
       })
 
-      if (response.ok) {
+      // Netlify Formsは成功時に200, 201, 302などを返す
+      // 400番台・500番台のみをエラーとする
+      if (response.status >= 200 && response.status < 400) {
         setSubmitStatus('success')
         e.currentTarget.reset()
       } else {
+        console.error('Form submission failed with status:', response.status)
         setSubmitStatus('error')
       }
     } catch (error) {
@@ -77,7 +80,7 @@ export default function Contact() {
 
             {submitStatus === 'success' && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-                お問い合わせありがとうございます。後日ご連絡いたします。
+                ありがとうございます。送信が完了しました。
               </div>
             )}
 
