@@ -14,7 +14,6 @@ const projects = [
     description: '寿司店ののぼりを作成しました。',
     image: '/images/202510_sushigen-nobori.png',
     tag: 'デザイン',
-    category: 'ブランディング',
     year: '2025.10'
   },
   {
@@ -23,7 +22,6 @@ const projects = [
     description: '珈琲ショップのECサイト（BASE）を制作しました。',
     image: '/images/202509_mitsu-ec.png',
     tag: 'デザイン',
-    category: 'ECサイト',
     year: '2025.09'
   },
   {
@@ -32,7 +30,6 @@ const projects = [
     description: '寿司店のHPを制作しました。',
     image: '/images/202508_sushigen-hp.png',
     tag: 'デザイン',
-    category: 'LINE活用',
     year: '2025.08'
   },
   {
@@ -41,7 +38,6 @@ const projects = [
     description: '珈琲ショップのリーフレット、商品カードを作成しました。',
     image: '/images/202507_mitsu.png',
     tag: 'デザイン',
-    category: 'ブランディング',
     year: '2025.07'
   },
   {
@@ -50,7 +46,6 @@ const projects = [
     description: '店内のランチメニュー表を作成しました。',
     image: '/images/202506_sushigen-lunch.png',
     tag: 'デザイン',
-    category: 'AI活用術',
     year: '2025.06'
   },
   {
@@ -59,7 +54,6 @@ const projects = [
     description: '図書館にて初心者向けにAI活用ワークショップを開催しました。',
     image: '/images/202506workshop.png',
     tag: 'レッスン',
-    category: 'ECサイト',
     year: '2025.06'
   },
   {
@@ -68,7 +62,6 @@ const projects = [
     description: '寿司店の店長および店員の名刺を作成しました。',
     image: '/images/202506_sushigencard.png',
     tag: 'デザイン',
-    category: 'デザインツール',
     year: '2025.06'
   },
   {
@@ -77,7 +70,6 @@ const projects = [
     description: '寿司店の店内用メニュー表、出前用メニュー表を作成しました。',
     image: '/images/202505_sushigen-menu.png',
     tag: 'デザイン',
-    category: 'Webサイト',
     year: '2025.05'
   },
   {
@@ -86,7 +78,6 @@ const projects = [
     description: '図書館にて初心者向けにAI活用ワークショップを開催しました。',
     image: '/images/202504workshop.png',
     tag: 'レッスン',
-    category: 'ノーコード',
     year: '2025.04'
   },
   {
@@ -95,7 +86,6 @@ const projects = [
     description: '所属しているオンラインコミュニティの「今日から始める稼ぐスキルの育て方セミナー」にて登壇しました。',
     image: '/images/20250125_seminar.JPG',
     tag: 'レッスン',
-    category: 'AI活用術',
     year: '2025.01'
   }
 ]
