@@ -24,6 +24,10 @@ export default function Contact() {
         body: new URLSearchParams(formData as any).toString(),
       })
 
+      const text = await response.text()
+      console.log('Netlify forms status:', response.status)
+      console.log('Netlify forms body:', text)
+
       // Netlify Formsは成功時に200, 201, 302などを返す
       // 400番台・500番台のみをエラーとする
       if (response.status >= 200 && response.status < 400) {
