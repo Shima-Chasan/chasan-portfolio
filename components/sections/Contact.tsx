@@ -5,9 +5,11 @@ import Section from '../Section'
 import Card from '../Card'
 import Button from '../Button'
 
+type SubmitStatus = 'idle' | 'success' | 'error'
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -15,7 +17,9 @@ export default function Contact() {
     setSubmitStatus('idle')
 
     try {
-      const formData = new FormData(e.currentTarget)
+      const form = e.currentTarget
+      const formData = new FormData(form)
+
       const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: {
@@ -24,17 +28,13 @@ export default function Contact() {
         body: new URLSearchParams(formData as any).toString(),
       })
 
-      const text = await response.text()
       console.log('Netlify forms status:', response.status)
-      console.log('Netlify forms body:', text)
 
-      // Netlify Formsは成功時に200, 201, 302などを返す
-      // 400番台・500番台のみをエラーとする
-      if (response.status >= 200 && response.status < 400) {
+      // ステータスコードが 200〜299 の場合は成功とみなす
+      if (response.ok) {
         setSubmitStatus('success')
-        e.currentTarget.reset()
+        form.reset()
       } else {
-        console.error('Form submission failed with status:', response.status)
         setSubmitStatus('error')
       }
     } catch (error) {
@@ -66,16 +66,16 @@ export default function Contact() {
 
       <div className="max-w-2xl mx-auto">
         <Card>
-          <form 
-            name="contact" 
+          <form
+            name="contact"
             method="POST"
             onSubmit={handleSubmit}
             className="space-y-6"
           >
             {/* Netlify Forms用のhidden input */}
             <input type="hidden" name="form-name" value="contact" />
-            
-            {/* Honeypot field for spam protection */}
+
+            {/* Honeypot */}
             <p className="hidden">
               <label>
                 Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
